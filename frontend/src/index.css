@@ -1,0 +1,60 @@
+
+/* Global reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  color: #172033;
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Form elements */
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+}
+
+/* Prevent default heading styles from interfering with pages */
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+/* Accessible keyboard focus */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid #315efb;
+  outline-offset: 3px;
+}

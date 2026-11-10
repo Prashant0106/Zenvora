@@ -1,0 +1,97 @@
+
+/* WHY CHOOSE ZENVORA */
+
+.why-choose-section {
+  padding: 80px 7%;
+  background: #ffffff;
+}
+
+.why-choose-heading {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.why-choose-heading > span {
+  color: #315efb;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.why-choose-heading h2 {
+  color: #172b5c;
+  font-size: 36px;
+  font-weight: 800;
+  margin: 12px 0;
+}
+
+.why-choose-heading p {
+  color: #64748b;
+  font-size: 15px;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.benefit-card {
+  padding: 32px 22px;
+  background: #f3f7ff;
+  border: 1px solid #e5eaf3;
+  border-radius: 14px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 15px 35px rgba(23, 43, 92, 0.09);
+}
+
+.benefit-icon {
+  width: 65px;
+  height: 65px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  background: #e2eaff;
+  color: #315efb;
+}
+
+.benefit-card h3 {
+  color: #172b5c;
+  font-size: 17px;
+  margin-bottom: 12px;
+}
+
+.benefit-card p {
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+  .benefits-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 550px) {
+  .why-choose-section {
+    padding: 55px 5%;
+  }
+
+  .why-choose-heading h2 {
+    font-size: 28px;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+}

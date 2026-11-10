@@ -13,6 +13,7 @@ function Products() {
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
+  const [searchTerm, setSearchTerm] = useState('')
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -30,6 +31,10 @@ function Products() {
     fetchProducts()
 
   }, [])
+
+  const filteredProducts = products.filter((product) =>
+    product.name.toLowerCase().includes(searchTerm.toLowerCase())
+  )
   if (loading) {
     return (
       <div className='products-message'>
@@ -55,16 +60,28 @@ function Products() {
         <p>Discover products you'll love, all in one place.</p>
       </section>
 
+      <section className='product-search-section'>
+        <div className='product-search-box'>
+          <span>🔍</span>
+
+          <input type='text' placeholder='Search products by name...' value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
+
+          {searchTerm && (
+            <button onClick={()=> setSearchTerm('')}>Clear</button>
+          )}
+        </div>
+      </section>
+
       <section className='products-container'>
-        {products.length === 0 ? (
+        {filteredProducts.length === 0 ? (
           <div className='empty-products'>
             <h2>No products available</h2>
-            <p>We're getting our collection ready. Check back soon!</p>
+            <p>{searchTerm ? `No products match "${searchTerm}". Try another search.` : "We're getting our collection ready. Check back soon!"}</p>
           </div>
         ) : (
           <div className='products-grid'>
 
-            {products.map((product) => {
+            {filteredProducts.map((product) => {
 
               // Find this product in the cart
               const cartItem = cartItems.find(
